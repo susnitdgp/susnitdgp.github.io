@@ -1,5 +1,5 @@
 git:
 	git status
 	git add .
-	git commit -m "Committed at " $(date)
+	git commit -m "Committed At=>" $(date)
 	git push -u origin master
