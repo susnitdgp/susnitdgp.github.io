@@ -2,9 +2,9 @@ MSG="Committed At $(shell date)"
 
 git:
 	git status
-	echo "================================"
+	echo "++++++++++++++"
 	git add .
-	echo "================================"
+	echo "++++++++++++++"
 	git commit -m $(MSG)
-	echo "================================"
+	echo "++++++++++++++"
 	git push -u origin master
