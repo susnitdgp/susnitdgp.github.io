@@ -64,7 +64,26 @@
 
 
 
-  <script src="main.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDq1fcL9GxuUw-JxCYNOHmK7IAx15FiD4g",
+      authDomain: "ntpc-test.firebaseapp.com",
+      databaseURL: "https://ntpc-test.firebaseio.com",
+      projectId: "ntpc-test",
+      storageBucket: "ntpc-test.appspot.com",
+      messagingSenderId: "390567912142",
+      appId: "1:390567912142:web:ebf686e301844d847d269f"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 
 </html>
