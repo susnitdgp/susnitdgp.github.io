@@ -60,6 +60,24 @@
   <fieldset>
     <legend>Firebase Realtime DB Demo</legend>
 
+    <div class="inline form-group">
+      <label for="uuid">Id</label>
+      <input type="text" id="uuid" style="width: 150px;">
+    </div>
+    
+    <div class="inline form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" style="width: 150px;">
+    </div>
+
+    <div class="block">
+      <button class="blue">Translate</button>
+      <button id="insertBtn">Insert</button>
+    </div>
+
+
+  </div>
+
   </fieldset>
 
 
@@ -81,12 +99,31 @@
       messagingSenderId: "390567912142",
       appId: "1:390567912142:web:ebf686e301844d847d269f"
     };
-  
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-
     //get database
     const db = getDatabase(app);
+  
+
+    const sbtButton = document.querySelector('button#insertBtn');
+    sbtButton.addEventListener('click', insertData);
+
+    const random_uuid = uuidv4();
+    var uuidText = document.querySelector('input#uuid');
+    uuidText.value=random_uuid;
+
+
+    const name = document.querySelector('input#name');
+
+    function insertData(){
+      //write data
+      set(ref(db, 'users/' + random_uuid), {
+        username: name.value
+        
+      });
+
+    }
+
 
     //read data of Students collection and document 426
     const studentsRef = ref(db, 'Students/'+ "426/");
@@ -95,11 +132,7 @@
       console.log(data.fname);
     });
 
-    //write data
-    set(ref(db, 'users/' + "423"), {
-      username: 'avc',
-      email: 'hello'
-    });
+    
 
 
     
