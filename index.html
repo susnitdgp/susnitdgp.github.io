@@ -126,20 +126,22 @@
     const sbtButton = document.querySelector('button#insertBtn');
     sbtButton.addEventListener('click', insertData);
 
-  
+    const val=UUID.generate();
     var uuidText = document.querySelector('input#uuid');
-    uuidText.value=UUID;
-    console.log(UUID);
+    uuidText.value=val;
+    console.log(val);
     uuidText.disabled=true;
 
     const name = document.querySelector('input#name');
 
     function insertData(){
       //write data
-      set(ref(db, 'users/' + UUID), {
+      set(ref(db, 'users/' + val), {
         username: name.value
         
       });
+
+      console.log("Data Inserted");
 
     }
 
