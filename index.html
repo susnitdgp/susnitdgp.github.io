@@ -84,20 +84,18 @@
   
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    console.log(app);
 
+    //get database
     const db = getDatabase(app);
-    console.log(db);
 
-    const studentsRef = ref(db, 'Students/');
-    console.log(studentsRef);
-
+    //read data of Students collection and document 426
+    const studentsRef = ref(db, 'Students/'+ "426/");
     onValue(studentsRef, (snapshot) => {
       const data = snapshot.val();
-      console.log(data);
+      console.log(data.fname);
     });
 
-
+    //write data
     set(ref(db, 'users/' + "423"), {
       username: 'avc',
       email: 'hello'
