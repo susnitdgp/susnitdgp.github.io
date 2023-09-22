@@ -2,10 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Docker Nginx</title>
+  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  
+  <title>WebRTC Demo(Testing)x</title>
 </head>
 <body>
   <h2>Hello from GitHUB Pages(Goswami)</h2>
+
+  <fieldset>
+    <legend>WebRTC - Transfer a file</legend>
+    <div >
+      <form id="fileInfo">
+        <input type="file" id="fileInput" name="files"/>
+      </form>
+      <button disabled id="sendFile">Send</button>
+      <button disabled id="abortButton">Abort</button>
+    </div>
+
+    <div class="progress">
+      <div class="label">Send progress: </div>
+      <progress id="sendProgress" max="0" value="0"></progress>
+    </div>
+
+    <div class="progress">
+      <div class="label">Receive progress: </div>
+      <progress id="receiveProgress" max="0" value="0"></progress>
+    </div>
+
+    <div id="bitrate"></div>
+    <a id="download"></a>
+    <span id="status"></span>
+
+  </fieldset>
+
+  <hr/>
+
 </body>
 </html>
 
