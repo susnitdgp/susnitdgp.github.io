@@ -1,7 +1,7 @@
-MSG="Committed At=>" $(date)
+MSG="Committed At $(shell date)"
 
 git:
 	git status
 	git add .
-	git commit -m $MSG
+	git commit -m $(MSG)
 	git push -u origin master
