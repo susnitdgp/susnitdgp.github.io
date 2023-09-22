@@ -82,7 +82,21 @@
     };
   
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    const firebase = initializeApp(firebaseConfig);
+    console.log(app);
+
+    const dbRef = firebase.database().ref();
+
+    dbRef.child("Students").get().then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+    }).catch((error) => {
+      console.error(error);
+    });
+
   </script>
 </body>
 
