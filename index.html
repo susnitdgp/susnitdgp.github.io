@@ -87,8 +87,11 @@
     console.log(app);
 
     const db = getDatabase(app);
+    console.log(db);
 
     const Students = ref(db, 'Students/' + "426");
+    console.log(Students);
+
     onValue(Students, (snapshot) => {
       const data = snapshot.val();
       console.log(data);
