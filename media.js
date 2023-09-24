@@ -8,11 +8,14 @@ function hasUserMedia() {
        || navigator.mozGetUserMedia; 
          
     //enabling video and audio channels 
-    navigator.getUserMedia({ video: true, audio: true }, function (stream) { 
+    navigator.getUserMedia({ video: true, audio: true }, function (stream) {
+        console.log(stream) ;
+        
        var video = document.querySelector('video#my_video'); 
          
        //inserting our stream to the video tag     
-       video.src = window.URL.createObjectURL(stream); 
+       video.srcObject = stream;
+
     }, function (err) {}); 
  } else { 
     alert("WebRTC is not supported"); 
