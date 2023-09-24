@@ -10,8 +10,8 @@ function hasUserMedia() {
          
     //enabling video and audio channels 
     navigator.getUserMedia({ video: true, audio: true }, function (stream) {
-        //console.log(stream) ;
-        logger.innerHTML=JSON.stringify(stream);
+        console.log(stream) ;
+        //logger.innerHTML=JSON.stringify(stream);
 
        var video = document.querySelector('video#my_video'); 
          
