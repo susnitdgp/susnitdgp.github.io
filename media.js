@@ -4,13 +4,12 @@ function hasUserMedia() {
  } 
 
  if (hasUserMedia()) { 
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia
-       || navigator.mozGetUserMedia; 
+    //navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia; 
          
     //enabling video and audio channels 
-    navigator.getUserMedia({ video: true, audio: true }, function (stream) {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true }, function (stream) {
         console.log(stream) ;
-        
+
        var video = document.querySelector('video#my_video'); 
          
        //inserting our stream to the video tag     
