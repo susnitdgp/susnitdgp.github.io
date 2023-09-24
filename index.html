@@ -7,6 +7,8 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <title>WebRTC Demo(Testing)x</title>
 
   <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
@@ -15,6 +17,14 @@
     body {
       margin: 40px;
     }
+    video {
+      width: 40vw;
+      height: 40vw;
+      margin: 2rem;
+      background: #2c3e50;
+      border: 2px solid gray;
+    }
+
   </style>
 
 </head>
@@ -45,7 +55,8 @@
   <hr />
 
   <fieldset>
-    <legend>WebRTC Video Chat Demo</legend>
+    <legend>Log data</legend>
+    <div id="console_log"></div>
 
   </fieldset>
 
